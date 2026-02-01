@@ -7,7 +7,7 @@
     android:background="@android:drawable/dialog_holo_light_frame">
 
     <ImageView
-        android:id="@+id/ivFavourite"
+        android:id="@+id/ivCharacter"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="10dp"
@@ -25,8 +25,8 @@
         android:layout_marginStart="10dp"
         android:text="TextView"
         android:textColor="@color/black"
-        app:layout_constraintStart_toEndOf="@+id/ivFavourite"
-        app:layout_constraintTop_toTopOf="@+id/ivFavourite" />
+        app:layout_constraintStart_toEndOf="@+id/ivCharacter"
+        app:layout_constraintTop_toTopOf="@+id/ivCharacter" />
 
     <TextView
         android:id="@+id/tvBrand"
@@ -46,8 +46,8 @@
         android:text="TextView"
         android:textColor="#58E15D"
         android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/ivFavourite"
-        app:layout_constraintStart_toEndOf="@+id/ivFavourite" />
+        app:layout_constraintBottom_toBottomOf="@+id/ivCharacter"
+        app:layout_constraintStart_toEndOf="@+id/ivCharacter" />
 
     <ImageView
         android:id="@+id/imRating"

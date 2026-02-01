@@ -58,6 +58,9 @@
         <action
             android:id="@+id/action_navigation_profile_to_myReviewsFragment"
             app:destination="@id/myReviewsFragment" />
+        <action
+            android:id="@+id/action_navigation_profile_to_ordersFragment"
+            app:destination="@id/ordersFragment" />
     </fragment>
     <fragment
         android:id="@+id/productCardFragment"
@@ -76,6 +79,9 @@
         <action
             android:id="@+id/action_orderFragment_to_confirmationFragment"
             app:destination="@id/confirmationFragment" />
+        <action
+            android:id="@+id/action_orderFragment_to_productCardFragment"
+            app:destination="@id/productCardFragment" />
     </fragment>
     <fragment
         android:id="@+id/confirmationFragment"
@@ -96,5 +102,10 @@
         android:name="com.mitroshenko.newjob.presentation.ui.myreviews.myReviewsFragment"
         android:label="fragment_my_reviews"
         tools:layout="@layout/fragment_my_reviews" />
+    <fragment
+        android:id="@+id/ordersFragment"
+        android:name="com.mitroshenko.newjob.presentation.ui.allorders.OrdersFragment"
+        android:label="fragment_orders"
+        tools:layout="@layout/fragment_orders" />
 
 </navigation>

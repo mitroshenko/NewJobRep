@@ -19,7 +19,6 @@ import com.mitroshenko.newjob.databinding.FragmentOrderBinding
 import com.mitroshenko.newjob.presentation.ui.basket.BasketViewModel
 import com.mitroshenko.newjob.presentation.ui.basket.BasketViewModelFactory
 
-
 class OrderFragment : Fragment() {
     private val basketViewModel: BasketViewModel by viewModels { BasketViewModelFactory() }
     private val idCardModel: IdCardModel by activityViewModels()
@@ -27,7 +26,7 @@ class OrderFragment : Fragment() {
         BasketAdapter { entity ->
             idCardModel.idCard.value = entity.idCardProd
             view?.findNavController()!!
-                .navigate(R.id.action_navigation_responses_to_productCardFragment)
+                .navigate(R.id.action_orderFragment_to_productCardFragment)
         }
     }
     private var _binding: FragmentOrderBinding? = null
@@ -43,48 +42,14 @@ class OrderFragment : Fragment() {
         binding.apply {
             rcBasket.layoutManager = LinearLayoutManager(context)
             rcBasket.adapter = adapter
-            rcBasket.setOnClickListener {
-                view?.findNavController()!!
-                    .navigate(R.id.action_navigation_search_to_productCardFragment)
-            }
             btnArrange.setOnClickListener{
                 view?.findNavController()!!
                     .navigate(R.id.action_orderFragment_to_confirmationFragment)
+
             }
         }
         basketViewModel.allProducts.observe(viewLifecycleOwner) { prod ->
             prod.let { adapter.submitList(it) }
-        }
-        basketViewModel.apply {
-            val simpleCallback =
-                object : ItemTouchHelper.SimpleCallback(
-                    0,
-                    ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT
-                ) {
-                    override fun onMove(
-                        recyclerView: RecyclerView,
-                        viewHolder: RecyclerView.ViewHolder,
-                        target: RecyclerView.ViewHolder
-                    ): Boolean {
-                        return true
-                    }
-                    override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-                        val position = viewHolder.adapterPosition
-                        when (direction) {
-                            ItemTouchHelper.RIGHT -> {
-                                delete(position)
-                            }
-                            ItemTouchHelper.LEFT -> {
-                                delete(position)
-                            }
-                        }
-                    }
-                }
-            val itemTouchHelper = ItemTouchHelper(simpleCallback)
-            itemTouchHelper.attachToRecyclerView(binding.rcBasket)
-            allProducts.observe(viewLifecycleOwner) { prod ->
-                prod.let { adapter.submitList(it) }
-            }
         }
         return root
     }

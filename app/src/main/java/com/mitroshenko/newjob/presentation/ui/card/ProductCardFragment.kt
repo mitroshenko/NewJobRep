@@ -31,10 +31,6 @@ class ProductCardFragment : Fragment() {
         val root: View = binding.root
         binding.rcReviews.layoutManager = LinearLayoutManager(context)
         binding.rcReviews.adapter = revadapter
-        binding.ibBack.setOnClickListener {
-            view?.findNavController()!!
-                .navigate(R.id.action_productCardFragment_to_navigation_search)
-        }
         viewModel.apply {
             productList.observe(viewLifecycleOwner) { card ->
                 binding.apply {
@@ -45,7 +41,7 @@ class ProductCardFragment : Fragment() {
                     tvBrand.text = card.brand
                     tvPrice1.text = "Price"
                     tvDescriptionTitle.text = "Description"
-                    tvReviews.text = "Reviews"
+                    tvReviews.text = "Rev"
                     Glide.with(requireContext())
                         .load(card.images[0])
                         .into(ivFoto)

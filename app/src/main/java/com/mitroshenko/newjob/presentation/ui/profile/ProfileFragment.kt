@@ -28,23 +28,9 @@ class ProfileFragment : Fragment() {
                 startActivity(intent)
                 activity?.finish()
             }
-            btnPromo.setOnClickListener {
-                view?.findNavController()!!
-                    .navigate(R.id.action_navigation_profile_to_promoFragment)
-            }
-            btnChat.setOnClickListener {
-                view?.findNavController()!!
-                    .navigate(R.id.action_navigation_profile_to_navigation_messages)
-            }
-            btnReviews.setOnClickListener {
-                view?.findNavController()!!
-                    .navigate(R.id.action_navigation_profile_to_myReviewsFragment)
-            }
-
         }
         return root
     }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

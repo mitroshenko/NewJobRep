@@ -19,13 +19,13 @@ class ProductAdapter(private val onClick: (Product) -> Unit): ListAdapter<Produc
         private val binding = RecomRcviewBinding.bind(view)
         fun bind(products: Product) = with(binding) {
             itemView.setOnClickListener { onClick(products) }
-            tvRecTitle.text = products.title
-            tvPrice.text = products.price.toString()
+            tvTitle.text = products.title
+            tvPrice2.text = products.price.toString()
             tvBrand.text = products.brand
-            tvRaiting.text = products.rating.toString()
+            tvRating.text = products.rating.toString()
                 Glide.with(binding.root.context)
                     .load(products.images[0])
-                    .into(ivFavourite)
+                    .into(ivCharacter)
         }
         companion object {
             fun create(parent: ViewGroup, onClick: (Product) -> Unit): Holder {

@@ -26,7 +26,7 @@ class FavouriteViewModelFactory : ViewModelProvider.Factory {
         if (modelClass.isAssignableFrom(FavouriteViewModel::class.java)) {
             val application = checkNotNull(extras[ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY]) as Applications
             @Suppress("UNCHECKED_CAST")
-            return FavouriteViewModel(application.favouriterepository) as T
+            return FavouriteViewModel(application.favouriteRepository) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }

@@ -14,14 +14,14 @@ interface BasketDao {
     fun getAlphabetizedProducts(): Flow<List<BasketEntity>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insert(prod: BasketEntity)
+    suspend fun insert(basketEntity: BasketEntity)
 
     @Delete
-    suspend fun delete(prod: BasketEntity)
+    suspend fun delete(basketEntity: BasketEntity)
 
     @Query("DELETE FROM my_table")
     suspend fun deleteAll()
 
     @Update
-    suspend fun update(prod: BasketEntity)
+    suspend fun update(basketEntity: BasketEntity)
 }

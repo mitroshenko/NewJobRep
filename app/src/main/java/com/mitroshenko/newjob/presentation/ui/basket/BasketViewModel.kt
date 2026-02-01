@@ -26,7 +26,7 @@ class BasketViewModelFactory : ViewModelProvider.Factory {
         if (modelClass.isAssignableFrom(BasketViewModel::class.java)) {
             val application = checkNotNull(extras[ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY]) as Applications
             @Suppress("UNCHECKED_CAST")
-            return BasketViewModel(application.basketrepository) as T
+            return BasketViewModel(application.basketRepository) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }

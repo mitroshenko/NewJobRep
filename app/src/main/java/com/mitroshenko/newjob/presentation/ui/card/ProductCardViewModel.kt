@@ -48,7 +48,7 @@ class ProductCardViewModel(private val basketrepository: BasketRepository, priva
             brand = product.brand,
             rating = product.rating.toString(),
             price = product.price.toString(),
-            images = product.images.toString(),
+            images = product.images[0],
             idCardProd = product.id
         ))
     }
@@ -59,7 +59,7 @@ class ProductCardViewModel(private val basketrepository: BasketRepository, priva
             brand = product.brand,
             rating = product.rating.toString(),
             price = product.price.toString(),
-            images = product.images.toString(),
+            images = product.images[0],
             idCardProd = product.id
         ))
     }
@@ -70,7 +70,7 @@ class ProductCardViewModelFactory : ViewModelProvider.Factory {
             val applicationFavourite = checkNotNull(extras[ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY]) as Applications
             val applicationBasket = checkNotNull(extras[ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY]) as Applications
             @Suppress("UNCHECKED_CAST")
-            return ProductCardViewModel(applicationBasket.basketrepository, applicationFavourite.favouriterepository) as T
+            return ProductCardViewModel(applicationBasket.basketRepository, applicationFavourite.favouriteRepository) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }

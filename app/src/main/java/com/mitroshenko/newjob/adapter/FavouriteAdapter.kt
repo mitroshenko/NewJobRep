@@ -22,7 +22,7 @@ class FavouriteAdapter(private val onClick: (FavouriteEntity) -> Unit): ListAdap
             tvRating.text = favouriteEntity.rating
             Glide.with(binding.root.context)
                 .load(favouriteEntity.images)
-                .into(ivFavourite)
+                .into(ivCharacter)
         }
         companion object {
             fun create(parent: ViewGroup, onClick: (FavouriteEntity) -> Unit): Holder {
