@@ -6,6 +6,6 @@ import androidx.lifecycle.asLiveData
 import com.mitroshenko.newjob.data.database.basket.BasketEntity
 import com.mitroshenko.newjob.domain.repository.basket.BasketRepository
 
-class OrderViewModel(private val basketRepository: BasketRepository) : ViewModel() {
-    val allProducts: LiveData<List<BasketEntity>> = basketRepository.allProducts.asLiveData()
-    }
+//class OrderViewModel(private val basketRepository: BasketRepository) : ViewModel() {
+//    val allProducts: LiveData<List<BasketEntity>> = basketRepository.allProducts.asLiveData()
+//    }
