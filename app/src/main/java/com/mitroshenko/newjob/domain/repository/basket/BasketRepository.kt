@@ -1,7 +1,9 @@
-package com.mitroshenko.newjob.data.repository.basket
+package com.mitroshenko.newjob.domain.repository.basket
 
 import android.content.Context
 import androidx.annotation.WorkerThread
+import com.mitroshenko.newjob.data.database.basket.BasketDao
+import com.mitroshenko.newjob.data.database.basket.BasketEntity
 import com.mitroshenko.newjob.data.database.BasketRoomDatabase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.SupervisorJob

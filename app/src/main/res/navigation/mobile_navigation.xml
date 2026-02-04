@@ -64,7 +64,7 @@
     </fragment>
     <fragment
         android:id="@+id/productCardFragment"
-        android:name="com.mitroshenko.newjob.presentation.ui.card.ProductCardFragment"
+        android:name="com.mitroshenko.newjob.presentation.ui.productCard.ProductCardFragment"
         android:label="fragment_product_card"
         tools:layout="@layout/fragment_product_card" >
         <action

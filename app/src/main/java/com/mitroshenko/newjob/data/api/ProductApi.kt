@@ -1,7 +1,7 @@
 package com.mitroshenko.newjob.data.api
 
-import com.mitroshenko.newjob.data.model.product.Product
-import com.mitroshenko.newjob.data.model.product.Products
+import com.mitroshenko.newjob.domain.model.product.Product
+import com.mitroshenko.newjob.domain.model.product.Products
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:backgroundTint="#C14E4E"
-    tools:context=".presentation.ui.card.ProductCardFragment">
+    tools:context=".presentation.ui.productCard.ProductCardFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

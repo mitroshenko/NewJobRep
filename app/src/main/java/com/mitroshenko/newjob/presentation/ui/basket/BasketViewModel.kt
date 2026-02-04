@@ -7,8 +7,8 @@ import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.CreationExtras
 import com.mitroshenko.newjob.data.database.Applications
-import com.mitroshenko.newjob.data.repository.basket.BasketEntity
-import com.mitroshenko.newjob.data.repository.basket.BasketRepository
+import com.mitroshenko.newjob.data.database.basket.BasketEntity
+import com.mitroshenko.newjob.domain.repository.basket.BasketRepository
 import kotlinx.coroutines.launch
 
 class BasketViewModel(private val repository: BasketRepository) : ViewModel() {

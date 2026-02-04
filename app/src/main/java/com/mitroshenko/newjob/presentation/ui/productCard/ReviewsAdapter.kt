@@ -1,4 +1,4 @@
-package com.mitroshenko.newjob.adapter
+package com.mitroshenko.newjob.presentation.ui.productCard
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,11 +7,10 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.mitroshenko.newjob.R
+import com.mitroshenko.newjob.domain.model.product.Review
 import com.mitroshenko.newjob.databinding.ReviewsRcviewBinding
-import com.mitroshenko.newjob.data.model.product.Review
 
-
-class ReviewsAdapter: ListAdapter <Review, ReviewsAdapter.Holder>(DiffUtilCallback){
+class ReviewsAdapter: ListAdapter<Review, ReviewsAdapter.Holder>(DiffUtilCallback){
     class Holder(view: View): RecyclerView.ViewHolder(view){
         private val binding = ReviewsRcviewBinding.bind(view)
         fun bind(reviews: Review) = with(binding) {

@@ -1,4 +1,4 @@
-package com.mitroshenko.newjob.adapter
+package com.mitroshenko.newjob.presentation.ui.order
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.mitroshenko.newjob.R
-import com.mitroshenko.newjob.data.repository.order.OrderEntity
+import com.mitroshenko.newjob.data.database.order.OrderEntity
 import com.mitroshenko.newjob.databinding.ProductsRcviewBinding
 
 class OrderAdapter(private val onClick: (OrderEntity) -> Unit): ListAdapter<OrderEntity, OrderAdapter.Holder>(Comparator()){

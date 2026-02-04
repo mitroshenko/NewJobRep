@@ -1,4 +1,4 @@
-package com.mitroshenko.newjob.adapter
+package com.mitroshenko.newjob.presentation.ui.basket
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,9 +8,8 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.mitroshenko.newjob.R
-import com.mitroshenko.newjob.data.repository.basket.BasketEntity
+import com.mitroshenko.newjob.data.database.basket.BasketEntity
 import com.mitroshenko.newjob.databinding.BasketRcviewBinding
-
 
 class BasketAdapter(private val onClick: (BasketEntity) -> Unit): ListAdapter<BasketEntity, BasketAdapter.Holder>(Comparator()){
     class Holder(view: View, val onClick: (BasketEntity) -> Unit): RecyclerView.ViewHolder(view){

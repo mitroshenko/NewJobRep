@@ -1,4 +1,4 @@
-package com.mitroshenko.newjob.data.repository.favourites
+package com.mitroshenko.newjob.data.database.favourite
 
 import androidx.room.Dao
 import androidx.room.Delete
@@ -13,7 +13,7 @@ interface FavouriteDao {
     @Query("SELECT * FROM favourite_table")
     fun getAlphabetizedFavourites(): Flow<List<FavouriteEntity>>
 
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    @Insert(onConflict = OnConflictStrategy.Companion.IGNORE)
     suspend fun insert(favouriteEntity: FavouriteEntity)
 
     @Delete

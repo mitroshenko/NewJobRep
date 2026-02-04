@@ -1,4 +1,4 @@
-package com.mitroshenko.newjob.adapter
+package com.mitroshenko.newjob.presentation.ui.favourites
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.mitroshenko.newjob.R
-import com.mitroshenko.newjob.data.repository.favourites.FavouriteEntity
+import com.mitroshenko.newjob.data.database.favourite.FavouriteEntity
 import com.mitroshenko.newjob.databinding.FavouriteRcviewBinding
 
 class FavouriteAdapter(private val onClick: (FavouriteEntity) -> Unit): ListAdapter<FavouriteEntity, FavouriteAdapter.Holder>(Comparator()){

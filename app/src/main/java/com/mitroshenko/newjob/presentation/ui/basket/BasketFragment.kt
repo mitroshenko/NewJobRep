@@ -12,8 +12,7 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.mitroshenko.newjob.R
-import com.mitroshenko.newjob.adapter.BasketAdapter
-import com.mitroshenko.newjob.data.model.IdCard.IdCardModel
+import com.mitroshenko.newjob.domain.model.IdCard.IdCardModel
 import com.mitroshenko.newjob.databinding.FragmentBasketBinding
 
 

@@ -7,8 +7,8 @@ import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.CreationExtras
 import com.mitroshenko.newjob.data.database.Applications
-import com.mitroshenko.newjob.data.repository.favourites.FavouriteEntity
-import com.mitroshenko.newjob.data.repository.favourites.FavouriteRepository
+import com.mitroshenko.newjob.data.database.favourite.FavouriteEntity
+import com.mitroshenko.newjob.domain.repository.favourites.FavouriteRepository
 import kotlinx.coroutines.launch
 
 class FavouriteViewModel(private val repository: FavouriteRepository) : ViewModel() {

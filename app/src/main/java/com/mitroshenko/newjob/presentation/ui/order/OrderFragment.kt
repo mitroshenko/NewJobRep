@@ -8,13 +8,10 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
-import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.mitroshenko.newjob.R
-import com.mitroshenko.newjob.adapter.BasketAdapter
-import com.mitroshenko.newjob.data.model.IdCard.IdCardModel
-import com.mitroshenko.newjob.databinding.FragmentBasketBinding
+import com.mitroshenko.newjob.presentation.ui.basket.BasketAdapter
+import com.mitroshenko.newjob.domain.model.IdCard.IdCardModel
 import com.mitroshenko.newjob.databinding.FragmentOrderBinding
 import com.mitroshenko.newjob.presentation.ui.basket.BasketViewModel
 import com.mitroshenko.newjob.presentation.ui.basket.BasketViewModelFactory

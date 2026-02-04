@@ -1,4 +1,4 @@
-package com.mitroshenko.newjob.data.repository.basket
+package com.mitroshenko.newjob.data.database.basket
 
 import androidx.room.Dao
 import androidx.room.Delete
@@ -13,7 +13,7 @@ interface BasketDao {
     @Query("SELECT * FROM my_table")
     fun getAlphabetizedProducts(): Flow<List<BasketEntity>>
 
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    @Insert(onConflict = OnConflictStrategy.Companion.IGNORE)
     suspend fun insert(basketEntity: BasketEntity)
 
     @Delete
@@ -25,3 +25,4 @@ interface BasketDao {
     @Update
     suspend fun update(basketEntity: BasketEntity)
 }
+

@@ -10,15 +10,14 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.mitroshenko.newjob.R
-import com.mitroshenko.newjob.adapter.ProductAdapter
 import com.mitroshenko.newjob.databinding.FragmentSearchBinding
-import com.mitroshenko.newjob.data.model.IdCard.IdCardModel
+import com.mitroshenko.newjob.domain.model.IdCard.IdCardModel
 
 
 class SearchFragment : Fragment() {
     private val idCardModel : IdCardModel by activityViewModels()
-    private val adapter: ProductAdapter by lazy {
-        ProductAdapter { product ->
+    private val adapter: SearchAdapter by lazy {
+        SearchAdapter { product ->
             idCardModel.idCard.value = product.id
             view?.findNavController()!!
                 .navigate(R.id.action_navigation_search_to_productCardFragment)

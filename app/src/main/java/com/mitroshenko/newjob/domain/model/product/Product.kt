@@ -1,5 +1,8 @@
-package com.mitroshenko.newjob.data.model.product
+package com.mitroshenko.newjob.domain.model.product
 
+data class Products(
+    val products: List<Product>
+)
 data class Product(
     val id: Int,
     val title: String,

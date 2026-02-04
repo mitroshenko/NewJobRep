@@ -1,4 +1,4 @@
-package com.mitroshenko.newjob.data.repository.order
+package com.mitroshenko.newjob.data.database.order
 
 import androidx.room.Dao
 import androidx.room.Delete
@@ -6,8 +6,6 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
-import com.mitroshenko.newjob.data.repository.order.OrderEntity
-import com.mitroshenko.newjob.data.repository.basket.BasketEntity
 import kotlinx.coroutines.flow.Flow
 
 @Dao

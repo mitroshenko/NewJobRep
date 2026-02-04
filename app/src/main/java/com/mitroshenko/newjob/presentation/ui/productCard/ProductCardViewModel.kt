@@ -1,4 +1,4 @@
-package com.mitroshenko.newjob.presentation.ui.card
+package com.mitroshenko.newjob.presentation.ui.productCard
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -7,12 +7,12 @@ import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.CreationExtras
 import com.mitroshenko.newjob.data.api.ProductApi
 import com.mitroshenko.newjob.data.database.Applications
-import com.mitroshenko.newjob.data.model.product.Product
-import com.mitroshenko.newjob.data.model.product.Review
-import com.mitroshenko.newjob.data.repository.basket.BasketEntity
-import com.mitroshenko.newjob.data.repository.basket.BasketRepository
-import com.mitroshenko.newjob.data.repository.favourites.FavouriteEntity
-import com.mitroshenko.newjob.data.repository.favourites.FavouriteRepository
+import com.mitroshenko.newjob.domain.model.product.Product
+import com.mitroshenko.newjob.domain.model.product.Review
+import com.mitroshenko.newjob.data.database.basket.BasketEntity
+import com.mitroshenko.newjob.domain.repository.basket.BasketRepository
+import com.mitroshenko.newjob.data.database.favourite.FavouriteEntity
+import com.mitroshenko.newjob.domain.repository.favourites.FavouriteRepository
 import kotlinx.coroutines.launch
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit

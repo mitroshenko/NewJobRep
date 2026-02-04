@@ -1,4 +1,4 @@
-package com.mitroshenko.newjob.data.repository.favourites
+package com.mitroshenko.newjob.data.database.order
 
 import android.os.Parcelable
 import androidx.room.ColumnInfo
@@ -6,9 +6,9 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import kotlinx.parcelize.Parcelize
 
-@Entity(tableName = "favourite_table")
+@Entity(tableName = "order_table")
 @Parcelize
-data class FavouriteEntity(
+data class OrderEntity(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
     val id: Int? = null,

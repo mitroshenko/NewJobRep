@@ -1,8 +1,10 @@
-package com.mitroshenko.newjob.data.repository.favourites
+package com.mitroshenko.newjob.domain.repository.favourites
 
 import android.content.Context
 import androidx.annotation.WorkerThread
-import com.mitroshenko.newjob.data.database.FavouriteRoomDatabase
+import com.mitroshenko.newjob.data.database.BasketRoomDatabase
+import com.mitroshenko.newjob.data.database.favourite.FavouriteDao
+import com.mitroshenko.newjob.data.database.favourite.FavouriteEntity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.flow.Flow
@@ -23,10 +25,10 @@ class FavouriteRepository(private val favouritedao: FavouriteDao) {
         favouritedao.update(favouriteEntity)
     }
 
-    private var favouriteDatabase: FavouriteRoomDatabase? = null
+    private var favouriteDatabase: BasketRoomDatabase? = null
 
-    private fun initialiseDB(context: Context): FavouriteRoomDatabase? {
+    private fun initialiseDB(context: Context): BasketRoomDatabase? {
         val applicationScope = CoroutineScope(SupervisorJob())
-        return FavouriteRoomDatabase.getDatabase(context, applicationScope)
+        return BasketRoomDatabase.getDatabase(context, applicationScope)
     }
 }

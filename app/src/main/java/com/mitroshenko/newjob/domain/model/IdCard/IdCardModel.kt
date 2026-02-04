@@ -1,4 +1,4 @@
-package com.mitroshenko.newjob.data.model.IdCard
+package com.mitroshenko.newjob.domain.model.IdCard
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

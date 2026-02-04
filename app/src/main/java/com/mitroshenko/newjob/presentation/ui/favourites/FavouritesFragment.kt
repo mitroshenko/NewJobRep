@@ -4,23 +4,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.mitroshenko.newjob.R
-import com.mitroshenko.newjob.adapter.BasketAdapter
-import com.mitroshenko.newjob.adapter.FavouriteAdapter
-import com.mitroshenko.newjob.data.model.IdCard.IdCardModel
-import com.mitroshenko.newjob.databinding.FragmentBasketBinding
+import com.mitroshenko.newjob.domain.model.IdCard.IdCardModel
 import com.mitroshenko.newjob.databinding.FragmentFavouritesBinding
-import com.mitroshenko.newjob.presentation.ui.basket.BasketViewModel
-import com.mitroshenko.newjob.presentation.ui.basket.BasketViewModelFactory
 
 class FavouritesFragment : Fragment() {
     private val viewModel: FavouriteViewModel by viewModels { FavouriteViewModelFactory() }

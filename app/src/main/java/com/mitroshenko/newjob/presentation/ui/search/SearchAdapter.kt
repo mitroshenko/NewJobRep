@@ -1,6 +1,5 @@
-package com.mitroshenko.newjob.adapter
+package com.mitroshenko.newjob.presentation.ui.search
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,12 +8,10 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.mitroshenko.newjob.R
+import com.mitroshenko.newjob.domain.model.product.Product
 import com.mitroshenko.newjob.databinding.RecomRcviewBinding
-import com.mitroshenko.newjob.data.model.product.Product
-import kotlinx.coroutines.withContext
 
-
-class ProductAdapter(private val onClick: (Product) -> Unit): ListAdapter<Product, ProductAdapter.Holder>(Comparator()){
+class SearchAdapter(private val onClick: (Product) -> Unit): ListAdapter<Product, SearchAdapter.Holder>(Comparator()){
     class Holder(view: View, val onClick: (Product) -> Unit): RecyclerView.ViewHolder(view){
         private val binding = RecomRcviewBinding.bind(view)
         fun bind(products: Product) = with(binding) {

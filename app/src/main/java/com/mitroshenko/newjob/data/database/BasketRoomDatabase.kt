@@ -4,17 +4,17 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import androidx.sqlite.db.SupportSQLiteDatabase
-import com.mitroshenko.newjob.data.repository.basket.BasketDao
-import com.mitroshenko.newjob.data.repository.basket.BasketEntity
+import com.mitroshenko.newjob.data.database.basket.BasketDao
+import com.mitroshenko.newjob.data.database.basket.BasketEntity
+import com.mitroshenko.newjob.data.database.favourite.FavouriteDao
+import com.mitroshenko.newjob.data.database.favourite.FavouriteEntity
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
-@Database(entities = [BasketEntity::class], version = 1)
+@Database(entities = [BasketEntity::class, FavouriteEntity::class], version = 1)
 abstract class BasketRoomDatabase : RoomDatabase() {
 
-    abstract fun dao(): BasketDao
+    abstract fun basketDao(): BasketDao
+    abstract fun favouritedao(): FavouriteDao
 
     companion object {
 
@@ -31,30 +31,13 @@ abstract class BasketRoomDatabase : RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     BasketRoomDatabase::class.java,
-                    "note_database"
+                    "product_database"
                 )
-                    .fallbackToDestructiveMigration()
-                    .addCallback(ProductDatabaseCallback(scope))
                     .build()
                 INSTANCE = instance
                 instance
             }
         }
-        private class ProductDatabaseCallback(
-            private val scope: CoroutineScope
-        ) : RoomDatabase.Callback() {
-            override fun onCreate(db: SupportSQLiteDatabase) {
-                super.onCreate(db)
 
-                INSTANCE?.let { database ->
-                    scope.launch(Dispatchers.IO) {
-                        populateDatabase(database.dao())
-                    }
-                }
-            }
-        }
-        suspend fun populateDatabase(basketDao: BasketDao) {
-            basketDao.deleteAll()
-        }
     }
 }

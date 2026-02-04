@@ -1,11 +1,10 @@
-package com.mitroshenko.newjob.data.repository.basket
+package com.mitroshenko.newjob.data.database.basket
 
 import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import kotlinx.parcelize.Parcelize
-
 
 @Entity(tableName = "my_table")
 @Parcelize
@@ -26,5 +25,3 @@ data class BasketEntity(
     @ColumnInfo(name = "idCardProd")
     val idCardProd: Int
 ) : Parcelable
-
-
